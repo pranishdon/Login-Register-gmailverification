@@ -1,0 +1,76 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-12"> <!-- Adjust column width here -->
+                <div class="login-container">
+                <div class="login-container">
+                    <h1 class="text-center">Login</h1>
+                    {% if success_message %}
+                    <div class="alert alert-success " style="color: rgb(4, 255, 0);">
+                        {{ success_message }}
+                    </div>
+                    {% endif %}
+                    
+
+
+
+                    
+
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">username:</label>
+                            <input type="username" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <br>
+                    <div class="message-box mt-3">
+                        {% for message in messages %}
+                            <div class="blue-box alert alert-danger{% if message.tags %} {{ message.tags }}{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <style>
+                        .blue-box {
+                            background-color: rgb(140, 213, 219);
+                            color: rgb(255, 255, 255);
+                            border-color: rgb(255, 255, 255);
+                            padding: 10px;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                    
+                    
+                
+                    <br>
+                    <a href="{% url 'signup' %}" >Sign Up</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Add this CSS to your style.css or within <style> tags in the HTML file */
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.btn-primary,
+.btn-success {
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #1d7d31;
+    border-color: #1d7d31;
+}
